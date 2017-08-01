@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Bioinformatics - Genome similarity using Frequency Vectors (C++)" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Bioinformatics - Genome similarity using Frequency Vectors (C++)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Bioinformatics - Genome similarity using Frequency Vectors (C++)" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="data/AIHV_1.faa" />
+		<Unit filename="data/AMEV.faa" />
+		<Unit filename="data/APMiV.faa" />
+		<Unit filename="data/ASFV.faa" />
+		<Unit filename="data/ATV.faa" />
+		<Unit filename="data/AcMNPV.faa" />
+		<Unit filename="data/AdhoNPV.faa" />
+		<Unit filename="data/AdorGV.faa" />
+		<Unit filename="data/AsGV.faa" />
+		<Unit filename="data/AtHV_3.faa" />
+		<Unit filename="data/BAdV_4.faa" />
+		<Unit filename="data/BAdV_A.faa" />
+		<Unit filename="data/BAdV_B.faa" />
+		<Unit filename="data/BPSV.faa" />
+		<Unit filename="data/BmNPV.faa" />
+		<Unit filename="data/BoHV_1.faa" />
+		<Unit filename="data/BoHV_4.faa" />
+		<Unit filename="data/BoHV_5.faa" />
+		<Unit filename="data/CAdV.faa" />
+		<Unit filename="data/CHV_7.faa" />
+		<Unit filename="data/CMLV.faa" />
+		<Unit filename="data/CNPV.faa" />
+		<Unit filename="data/CPXV.faa" />
+		<Unit filename="data/CalHV_3.faa" />
+		<Unit filename="data/CcBV.faa" />
+		<Unit filename="data/CeHV_1.faa" />
+		<Unit filename="data/CeHV_15.faa" />
+		<Unit filename="data/CeHV_17.faa" />
+		<Unit filename="data/CeHV_2.faa" />
+		<Unit filename="data/CeHV_8.faa" />
+		<Unit filename="data/CfDeFNPV.faa" />
+		<Unit filename="data/CfMNPV.faa" />
+		<Unit filename="data/CpGV.faa" />
+		<Unit filename="data/CrleGV.faa" />
+		<Unit filename="data/CuniNPV.faa" />
+		<Unit filename="data/DAdV_A.faa" />
+		<Unit filename="data/DPV.faa" />
+		<Unit filename="data/ECTV.faa" />
+		<Unit filename="data/EHV_1.faa" />
+		<Unit filename="data/EHV_2.faa" />
+		<Unit filename="data/EHV_4.faa" />
+		<Unit filename="improved.cpp" />
+		<Unit filename="list.txt" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

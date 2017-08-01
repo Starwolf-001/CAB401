@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1501550659 source:e:\qut\cab401\cab_401_assignment\bioinformatics - genome similarity using frequency vectors (c++)\improved.cpp
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<math.h>
+
