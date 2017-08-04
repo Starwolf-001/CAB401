@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows.Shapes;
+using System.Windows.Media;
+
+namespace WpfApplication1
+{
+    class noteGraph
+    {
+        public double baseFreq;
+        public double[] heights;
+        public float div;
+
+        public noteGraph(float inRange, float divisor)
+        {
+            this.baseFreq = inRange;
+            this.div = divisor;
+            this.heights = new double[(int)Math.Ceiling(baseFreq / div)];
+            
+        }
+
+        public void setRectHeights(float[] values)
+        {
+          
+            for (int ii = 0; ii < heights.Length; ii++)
+            {
+                int index = (int)Math.Floor(baseFreq / div + ii);
+
+                heights[ii] = values[index];
+            }         
+
+
+        }
+    }
+}
