@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1501067619 source:d:\documents\qut\cab401\cab401_matrixmultiply\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<chrono>
+
+1502692626 source:e:\qut\cab401\cab401_matrixmultiply_win_thread\main.cpp
+	<stdlib.h>
+	<stdio.h>
+	<chrono>
+	<Windows.h>
+	<algorithm>
+
