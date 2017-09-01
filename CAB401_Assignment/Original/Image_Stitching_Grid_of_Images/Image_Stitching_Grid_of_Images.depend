@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1504171913 source:d:\documents\qut\cab401\cab401_assignment\original\image_stitching_grid_of_images\main.cpp
+	<stdio.h>
+	<iostream>
+	<sstream>
+	<string>
+	"opencv2/opencv.hpp"
+	"opencv2/core/core.hpp"
+	"opencv2/features2d/features2d.hpp"
+	"opencv2/highgui/highgui.hpp"
+	"opencv2/nonfree/nonfree.hpp"
+	"opencv2/calib3d/calib3d.hpp"
+	"opencv2/imgproc/imgproc.hpp"
+
