@@ -17,12 +17,6 @@ using namespace cv;
 // Images
 Mat image_1;
 Mat image_2;
-Mat image_3;
-Mat image_4;
-Mat image_5;
-Mat image_6;
-Mat image_7;
-Mat image_8;
 Mat gray_image_1;
 Mat gray_image_2;
 Mat first_image;
@@ -54,7 +48,7 @@ double min_dist = 100;
 // Global image quality and effects
 vector <int> compression_params;
 
-// Global int and string
+// Global int, string and bool
 int i = 0;
 int j = 0;
 int k = 0;
@@ -64,6 +58,59 @@ string file_name;
 string file_name_cropped;
 string part_one;
 string part_two;
+int numRow;
+int numCol;
+bool useToOriginImages = true;
+
+// User input global variables
+int columns;
+int rows;
+bool userInputError = false;
+string rowsEqualColumnsInput;
+bool sameColAndRow;
+int imageAmountPerRow[] = {};
+
+/*
+* Requests how many images the user wants stitched together
+* Pre: Waits for user input
+* Post: Uses user's input for the number of images, columns and rows that are required to be stitched together
+*/
+void userInput() {
+    // How many columns
+    std::cout << "What is the maximum number of columns?:" << std::endl;
+    std::cin >> columns;
+    if(std::cin.fail()) {
+        userInputError = true;
+    }
+    // How many rows
+    std::cout << "What is the maximum number of rows?: " << std::endl;
+    std::cin >> rows;
+    if(std::cin.fail()) {
+        userInputError = true;
+    }
+    // Are there the same amount of images in each column and row
+    std::cout << "For each column and row, are the number of images the same?: Y/N" << std::endl;
+    std::cin >> rowsEqualColumnsInput;
+    if(rowsEqualColumnsInput == "Y" || rowsEqualColumnsInput == "y") {
+        // How many images in a row
+        std::cout << "How many images are in a row?:" << std::endl;
+        std::cin >> imageAmountPerRow[1];
+    }
+    else if(rowsEqualColumnsInput == "N" || rowsEqualColumnsInput == "n") {
+        sameColAndRow = false;
+        // How many images in each row
+        for(numRow = 1; numRow <= rows; numRow++) {
+            std::cout << "How many images are in row " << numRow << "?:" << std::endl;
+            std::cin >> imageAmountPerRow[numRow];
+            if(std::cin.fail()) {
+                userInputError = true;
+            }
+        }
+    }
+    else {
+        userInputError = true;
+    }
+}
 
 /*
 * Sets JPEG image quality to highest possible quality
@@ -80,27 +127,44 @@ void setImageQuality() {
 * Pre: Called from main()
 * Post: Used for final grid image and for convertGrayscale()
 */
-int loadImages() {
-    if(i == 0) {
-        first_image = imread("Images/1.jpg");
-        second_image = imread("Images/2.jpg");
+void loadImages() {
+    // Set which image to load and from where
+    // If the first image of the set needs to be used
+    if(useToOriginImages == true) {
+        // Find image name based on column and row number
+        std::stringstream s1;
+        s1 << numRow;
+        part_one = s1.str();
+        std::stringstream s2;
+        s2 << numCol;
+        part_two = s2.str();
+        file_name = "Images/Satelite Images/" + part_one + part_two + ".jpg";
+        first_image = imread(file_name);
+        useToOriginImages = false;
     }
-    if(i == 1) {
-        first_image = imread("Images/3.jpg");
-        second_image = imread("Images/4.jpg");
+    // If the first image of the set has all ready been used
+    else {
+        // Find image name based on column and row number
+        std::stringstream s1;
+        s1 << numRow;
+        part_one = s1.str();
+        int nextColumn = numCol - 1;
+        std::stringstream s2;
+        s2 << nextColumn;
+        part_two = s2.str();
+        file_name = part_one + part_two + "_cropped.jpg";
+        first_image = imread(file_name);
     }
-    if(i == 2) {
-        first_image = imread("Images/5.jpg");
-        second_image = imread("Images/6.jpg");
-    }
-    if(i == 4) {
-        first_image = imread("Images/7.jpg");
-        second_image = imread("Images/8.jpg");
-    }
-    if (i < 0 && i > 4) {
-        std::cout << "int i error: stopping program" << std::endl;
-        return 0;
-    }
+    // Find image name based on column and row number
+    std::stringstream s1;
+    s1 << numRow;
+    part_one = s1.str();
+    int nextColumn = numCol + 1;
+    std::stringstream s2;
+    s2 << nextColumn;
+    part_two = s2.str();
+    file_name = "Images/Satelite Images/" + part_one + part_two + ".jpg";
+    second_image = imread(file_name);
 }
 
 /*
@@ -122,12 +186,12 @@ void convertGrayscale() {
 int imageCheck() {
     image_count++;
     if(!gray_image_1.data) {
-        std::cout << "Error Reading Image " << image_count << std::endl;
+        std::cout << "Error Reading Image " << numRow << numCol << std::endl;
         return 0;
     }
     image_count++;
     if(!gray_image_2.data) {
-        std::cout << "Error Reading Image " << image_count << std::endl;
+        std::cout << "Error Reading Image " << numRow << numCol + 1 << std::endl;
         return 0;
     }
 }
@@ -173,13 +237,11 @@ void imageDescriptors() {
 void goodMatches() {
     // Use matches tha have a distance that is less than 3 * min_dist
     std::vector <DMatch> good_matches;
-
     for (int i = 0; i < descriptors_object.rows; i++){
         if (matches[i].distance < 3 * min_dist) {
             good_matches.push_back (matches[i]);
         }
     }
-
     for (int i = 0; i < good_matches.size(); i++) {
         // Get the keypoints from the good matches
         obj.push_back (keypoints_object[good_matches[i].queryIdx].pt);
@@ -227,15 +289,13 @@ void imageStitch() {
     homographyImageResult();
     setImageQuality();
     // Write image
-    image_count--;
     std::stringstream s1;
-    s1 << image_count;
+    s1 << numRow;
     part_one = s1.str();
-    image_count++;
     std::stringstream s2;
-    s2 << image_count;
+    s2 << numCol;
     part_two = s2.str();
-    file_name = part_one + part_two + ".jpg";
+    file_name = part_one + part_two + "_worked.jpg";
     imwrite(file_name, result, compression_params);
 }
 
@@ -300,45 +360,6 @@ void cropBlack() {
 }
 
 /*
-* Loads the four stitching cropped images from directory to respective Mat
-* Pre: Called from main()
-* Post: Used for final grid image and for convertGrayscale()
-*/
-void loadCombinedImages() {
-    image_set_1 = imread("12_cropped.jpg");
-    image_set_2 = imread("34_cropped.jpg");
-    image_set_3 = imread("56_cropped.jpg");
-    image_set_4 = imread("78_cropped.jpg");
-}
-
-int prepStitchedImages() {
-    if(j == 0) {
-        first_image = image_set_1;
-        second_image = image_set_2;
-    }
-    if(j == 1) {
-        first_image = image_set_3;
-        second_image = image_set_4;
-    }
-    if (j < 0 && j > 1) {
-        std::cout << "int j error: stopping program" << std::endl;
-        return 0;
-    }
-}
-
-/*
-* Loads the two halves images
-* Pre: Called from main()
-* Post: Used for final grid image and for convertGrayscale()
-*/
-void loadHalfImages() {
-    image_set_1 = imread("910_cropped.jpg");
-    image_set_2 = imread("1112_cropped.jpg");
-    first_image = image_set_1;
-    second_image = image_set_2;
-}
-
-/*
 * Rotates two images
 * Pre: Called from main()
 * Post: Rotates images -90 degrees to allow for image stitching to occur
@@ -390,63 +411,30 @@ int rotateImage() {
 }
 
 /*
-* Loads the rotated two images
-* Pre: Called from main()
-* Post: Used for final grid image and for convertGrayscale()
-*/
-void loadRotatedImages() {
-    image_set_1 = imread("910_rotate.jpg");
-    image_set_2 = imread("1112_rotate.jpg");
-    first_image = image_set_1;
-    second_image = image_set_2;
-}
-
-/*
-* Loads the rotated two images
-* Pre: Called from main()
-* Post: Used for final grid image and for convertGrayscale()
-*/
-void almostCompletedImage() {
-    image_set_1 = imread("1314_rotate.jpg");
-    complete_image = image_set_1;
-}
-
-/*
 * Image stitching program using OpenCV. Takes multiple images and stitches them together until grid of images form one image
 * Pre: Program executed
 * Post: Final image produced with he time taken to produce the result
 */
 int main() {
-    while(i != 4) {
-        loadImages();
-        convertGrayscale();
-        imageCheck();
-        imageStitch();
-        cropBlack();
-        i++;
+    // Takes user input
+    userInput();
+    // Check for user input errors
+    if(userInputError == true) {
+        std::cout << "User failed to input an integer or appropriate character" << std::endl;
+        return 0;
     }
-    loadCombinedImages();
-    while(j != 2) {
-        prepStitchedImages();
-        convertGrayscale();
-        imageCheck();
-        imageStitch();
-        cropBlack();
-        j++;
+    // Stitch a set of images together in each row
+    for(numRow = 1; numRow <= rows; numRow++) {
+        useToOriginImages = true;
+        std::cout << "Stitching images for row " << numRow << std::endl;
+        for(numCol = 1; numCol <= imageAmountPerRow[numRow]; numCol++) {
+            loadImages();
+            convertGrayscale();
+            imageCheck();
+            imageStitch();
+            cropBlack();
+        }
     }
-    loadHalfImages();
-    convertGrayscale();
-    imageCheck();
-    while(k != 2) {
-        rotateImage();
-    }
-    loadRotatedImages();
-    convertGrayscale();
-    imageStitch();
-    almostCompletedImage();
-    imageCheck();
-    rotateImage();
-    cropBlack();
     waitKey(0);
     return 0;
  }
