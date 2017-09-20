@@ -21,14 +21,14 @@ Mat gray_image_1;
 Mat gray_image_2;
 Mat first_image;
 Mat second_image;
-Mat image_set_1;
-Mat image_set_2;
-Mat image_set_3;
-Mat image_set_4;
-Mat image_1_input;
 Mat result;
-Mat complete_image;
 Mat H;
+Mat ROI;
+Mat cropped;
+Mat crop_image;
+Mat crop_image_gray;
+Mat img_otsu;
+Mat half;
 
 // Global variables for descriptor and good matches
 Mat descriptors_object, descriptors_scene;
@@ -61,7 +61,8 @@ string part_two;
 int numRow;
 int numCol;
 bool useToOriginImages = true;
-
+int currentHeight;
+int currentWidth;
 // User input global variables
 int columns;
 int rows;
@@ -155,6 +156,8 @@ void loadImages() {
         file_name = part_one + part_two + "_cropped.jpg";
         first_image = imread(file_name);
     }
+    currentHeight = first_image.rows;
+    currentWidth = first_image.cols;
     // Find image name based on column and row number
     std::stringstream s1;
     s1 << numRow;
@@ -165,6 +168,7 @@ void loadImages() {
     part_two = s2.str();
     file_name = "Images/Satelite Images/" + part_one + part_two + ".jpg";
     second_image = imread(file_name);
+    currentWidth = currentWidth + second_image.cols;
 }
 
 /*
@@ -184,12 +188,10 @@ void convertGrayscale() {
 * Post: If False: imageStitch() is called from main()
 */
 int imageCheck() {
-    image_count++;
     if(!gray_image_1.data) {
         std::cout << "Error Reading Image " << numRow << numCol << std::endl;
         return 0;
     }
-    image_count++;
     if(!gray_image_2.data) {
         std::cout << "Error Reading Image " << numRow << numCol + 1 << std::endl;
         return 0;
@@ -259,23 +261,8 @@ void homographyImageResult() {
     H = findHomography(obj, scene, CV_RANSAC);
     // Use the Homography Matrix to warp the images
     warpPerspective(second_image, result, H, cv::Size (second_image.cols + first_image.cols, second_image.rows));
-    cv::Mat half(result, cv::Rect (0, 0, first_image.cols, first_image.rows));
+    cv::Mat half(result, cv::Rect(0, 0, first_image.cols, first_image.rows));
     first_image.copyTo(half);
-}
-
-/*
-* Clears data in Mats used for input images, grayscale of input images, image to crop and result image
-* Pre: Two images were stitched together
-* Post: continues to main()
-*/
-void clearMats() {
-    gray_image_1.release();
-    gray_image_2.release();
-    first_image.release();
-    second_image.release();
-    image_1_input.release();
-    result.release();
-    H.release();
 }
 
 /*
@@ -305,58 +292,30 @@ void imageStitch() {
 * Post: Black pixels area cropped out and written
 */
 void cropBlack() {
-    const int threshValue = 20;
-     // Set to 5%
-    const float borderThresh = 0.05f;
     // Read images
-    Mat crop_image = imread(file_name);
-    Mat crop_image_gray;
-    // Convert to Images to Grayscale
+    crop_image = imread(file_name);
     cvtColor(crop_image, crop_image_gray, CV_RGB2GRAY);
-    // Threshold
-    Mat thresholded;
-    threshold(crop_image_gray, thresholded, threshValue, 255, THRESH_BINARY);
-    morphologyEx(thresholded, thresholded, MORPH_CLOSE,
-    // Rectangle Structure and Borders
-    getStructuringElement(MORPH_RECT, Size(3, 3)),
-    Point(-1, -1), 2, BORDER_CONSTANT, Scalar(0));
-    Point thresholdLength;
-    Point borderRectangle;
-    // Search for threshold length rows
-    for (int row = 0; row < thresholded.rows; row++) {
-        if (countNonZero(thresholded.row(row)) > borderThresh * thresholded.cols) {
-            thresholdLength.y = row;
-            break;
+    cv::threshold(crop_image_gray, img_otsu, 0.0, 255.0, cv::THRESH_BINARY + cv::THRESH_OTSU);
+    // Crop dimensions
+    int startX = 0;
+    int startY = 0;
+    int width = currentWidth;
+    // Find how many black pixels in a row
+    for (int pixel = ((3 * currentWidth) / 4); pixel < img_otsu.cols; pixel++) {
+        // not finding black pixels
+        int identifyPixel = img_otsu.at<uchar>(1, pixel);
+        if (identifyPixel == 0) {
+            width = width - 1;
         }
     }
-    // Search for threshold length columns
-    for (int col = 0; col < thresholded.cols; col++) {
-        if (countNonZero(thresholded.col(col)) > borderThresh * thresholded.rows) {
-            thresholdLength.x = col;
-            break;
-        }
-    }
-    // Search for border of rectangle rows
-    for (int row = thresholded.rows - 1; row >= 0; row--) {
-        if (countNonZero(thresholded.row(row)) > borderThresh * thresholded.cols) {
-            borderRectangle.y = row;
-            break;
-        }
-    }
-    // Search for border of rectangle columns
-    for (int col = thresholded.cols - 1; col >= 0; col--) {
-        if (countNonZero(thresholded.col(col)) > borderThresh * thresholded.rows) {
-            borderRectangle.x = col;
-            break;
-        }
-    }
+    int height = currentHeight;
     // Rectangle Region of Interest (roi)
-    Rect roi(thresholdLength, borderRectangle);
-    Mat cropped = crop_image(roi);
+    Mat ROI(crop_image, Rect(startX, startY, width, height));
+    // Copy data to matrix
+    ROI.copyTo(cropped);
     setImageQuality();
     file_name_cropped = part_one + part_two + "_cropped.jpg";
     imwrite(file_name_cropped, cropped, compression_params);
-    clearMats();
 }
 
 /*
@@ -364,50 +323,72 @@ void cropBlack() {
 * Pre: Called from main()
 * Post: Rotates images -90 degrees to allow for image stitching to occur
 */
-int rotateImage() {
-    if(k == 2) {
-        // Loads the 1st Input Image and Prepares a Grayscale of the Image
-        image_1_input = complete_image;
-        k++;
-        file_name = "Completed.jpg";
-    }
-    if(k == 1) {
-        // Loads the 1st Input Image and Prepares a Grayscale of the Image
-        image_1_input = second_image;
-        k++;
-        file_name = "1112_rotate.jpg";
-    }
-    if(k == 0) {
-        // Loads the 1st Input Image and Prepares a Grayscale of the Image
-        image_1_input = first_image;
-        k++;
-        file_name = "910_rotate.jpg";
-    }
-    if(k > 0 && k <= 2) {
-        // Rotate
-        double angle = -90;
-    }
-    if(k == 3) {
-        // Rotate
-        double angle = 90;
-        k++;
-    }
-    if(k < 0 && k > 4) {
-       std::cout << "int k error: stopping program" << std::endl;
-    return 0;
-    }
-    // get rotation matrix for rotating the image around its center
-    Point2f centerOne(image_1_input.cols / 2.0, image_1_input.rows / 2.0);
-    Mat rotOne = getRotationMatrix2D(centerOne, angle, 1.0);
-    // determine bounding rectangle
-    Rect boxOne = RotatedRect(centerOne, image_1_input.size(), angle).boundingRect();
-    // adjust transformation matrix
-    rotOne.at<double>(0, 2) += boxOne.width / 2.0 - centerOne.x;
-    rotOne.at<double>(1, 2) += boxOne.height / 2.0 - centerOne.y;
-    warpAffine(image_1_input, image_1, rotOne, boxOne.size());
-    // Write image
-    setImageQuality();
-    imwrite(file_name, image_1, compression_params);
+//int rotateImage() {
+//    if(k == 2) {
+//        // Loads the 1st Input Image and Prepares a Grayscale of the Image
+//        image_1_input = complete_image;
+//        k++;
+//        file_name = "Completed.jpg";
+//    }
+//    if(k == 1) {
+//        // Loads the 1st Input Image and Prepares a Grayscale of the Image
+//        image_1_input = second_image;
+//        k++;
+//        file_name = "1112_rotate.jpg";
+//    }
+//    if(k == 0) {
+//        // Loads the 1st Input Image and Prepares a Grayscale of the Image
+//        image_1_input = first_image;
+//        k++;
+//        file_name = "910_rotate.jpg";
+//    }
+//    if(k > 0 && k <= 2) {
+//        // Rotate
+//        double angle = -90;
+//    }
+//    if(k == 3) {
+//        // Rotate
+//        double angle = 90;
+//        k++;
+//    }
+//    if(k < 0 && k > 4) {
+//       std::cout << "int k error: stopping program" << std::endl;
+//    return 0;
+//    }
+//    // get rotation matrix for rotating the image around its center
+//    Point2f centerOne(image_1_input.cols / 2.0, image_1_input.rows / 2.0);
+//    Mat rotOne = getRotationMatrix2D(centerOne, angle, 1.0);
+//    // determine bounding rectangle
+//    Rect boxOne = RotatedRect(centerOne, image_1_input.size(), angle).boundingRect();
+//    // adjust transformation matrix
+//    rotOne.at<double>(0, 2) += boxOne.width / 2.0 - centerOne.x;
+//    rotOne.at<double>(1, 2) += boxOne.height / 2.0 - centerOne.y;
+//    warpAffine(image_1_input, image_1, rotOne, boxOne.size());
+//    // Write image
+//    setImageQuality();
+//    imwrite(file_name, image_1, compression_params);
+//}
+
+/*
+* Clears data in Mats used for input images, grayscale of input images, image to crop and result image
+* Pre: Two images were stitched together
+* Post: continues to main()
+*/
+void clearAll() {
+    gray_image_1.release();
+    gray_image_2.release();
+    first_image.release();
+    second_image.release();
+    result.release();
+    H.release();
+    ROI.release();
+    cropped.release();
+    crop_image_gray.release();
+    img_otsu.release();
+    crop_image.release();
+    half.release();
+    keypoints_object, keypoints_scene;
+    descriptors_object.release(), descriptors_scene.release();
 }
 
 /*
@@ -433,6 +414,7 @@ int main() {
             imageCheck();
             imageStitch();
             cropBlack();
+            clearAll();
         }
     }
     waitKey(0);
