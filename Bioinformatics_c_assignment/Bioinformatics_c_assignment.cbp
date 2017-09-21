@@ -11,6 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="list.txt" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>
@@ -20,6 +21,7 @@
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
+				<Option parameters="list.txt" />
 				<Compiler>
 					<Add option="-O2" />
 				</Compiler>
@@ -32,11 +34,54 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="AIHV_1.faa" />
+		<Unit filename="AMEV.faa" />
+		<Unit filename="APMiV.faa" />
+		<Unit filename="ASFV.faa" />
+		<Unit filename="ATV.faa" />
+		<Unit filename="AcMNPV.faa" />
+		<Unit filename="AdhoNPV.faa" />
+		<Unit filename="AdorGV.faa" />
+		<Unit filename="AsGV.faa" />
+		<Unit filename="AtHV_3.faa" />
+		<Unit filename="BAdV_4.faa" />
+		<Unit filename="BAdV_A.faa" />
+		<Unit filename="BAdV_B.faa" />
+		<Unit filename="BPSV.faa" />
+		<Unit filename="BmNPV.faa" />
+		<Unit filename="BoHV_1.faa" />
+		<Unit filename="BoHV_4.faa" />
+		<Unit filename="BoHV_5.faa" />
+		<Unit filename="CAdV.faa" />
+		<Unit filename="CHV_7.faa" />
+		<Unit filename="CMLV.faa" />
+		<Unit filename="CNPV.faa" />
+		<Unit filename="CPXV.faa" />
+		<Unit filename="CalHV_3.faa" />
+		<Unit filename="CcBV.faa" />
+		<Unit filename="CeHV_1.faa" />
+		<Unit filename="CeHV_15.faa" />
+		<Unit filename="CeHV_17.faa" />
+		<Unit filename="CeHV_2.faa" />
+		<Unit filename="CeHV_8.faa" />
+		<Unit filename="CfDeFNPV.faa" />
+		<Unit filename="CfMNPV.faa" />
+		<Unit filename="CpGV.faa" />
+		<Unit filename="CrleGV.faa" />
+		<Unit filename="CuniNPV.faa" />
+		<Unit filename="DAdV_A.faa" />
+		<Unit filename="DPV.faa" />
+		<Unit filename="ECTV.faa" />
+		<Unit filename="EHV_1.faa" />
+		<Unit filename="EHV_2.faa" />
+		<Unit filename="EHV_4.faa" />
+		<Unit filename="improved.cpp" />
+		<Unit filename="list.txt" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
+			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
