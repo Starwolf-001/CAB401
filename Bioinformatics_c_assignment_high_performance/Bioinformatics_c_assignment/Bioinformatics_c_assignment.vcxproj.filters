@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bioinformatics_c_assignment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="AcMNPV.faa" />
+    <None Include="AdhoNPV.faa" />
+    <None Include="AdorGV.faa" />
+    <None Include="AIHV_1.faa" />
+    <None Include="AMEV.faa" />
+    <None Include="APMiV.faa" />
+    <None Include="ASFV.faa" />
+    <None Include="AsGV.faa" />
+    <None Include="AtHV_3.faa" />
+    <None Include="ATV.faa" />
+    <None Include="BAdV_4.faa" />
+    <None Include="BAdV_A.faa" />
+    <None Include="BAdV_B.faa" />
+    <None Include="BmNPV.faa" />
+    <None Include="BoHV_1.faa" />
+    <None Include="BoHV_4.faa" />
+    <None Include="BoHV_5.faa" />
+    <None Include="BPSV.faa" />
+    <None Include="CAdV.faa" />
+    <None Include="CalHV_3.faa" />
+    <None Include="CcBV.faa" />
+    <None Include="CeHV_1.faa" />
+    <None Include="CeHV_2.faa" />
+    <None Include="CeHV_8.faa" />
+    <None Include="CeHV_15.faa" />
+    <None Include="CeHV_17.faa" />
+    <None Include="CfDeFNPV.faa" />
+    <None Include="CfMNPV.faa" />
+    <None Include="CHV_7.faa" />
+    <None Include="CMLV.faa" />
+    <None Include="CNPV.faa" />
+    <None Include="CpGV.faa" />
+    <None Include="CPXV.faa" />
+    <None Include="CrleGV.faa" />
+    <None Include="CuniNPV.faa" />
+    <None Include="DAdV_A.faa" />
+    <None Include="DPV.faa" />
+    <None Include="ECTV.faa" />
+    <None Include="EHV_1.faa" />
+    <None Include="EHV_2.faa" />
+    <None Include="EHV_4.faa" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="list.txt" />
+  </ItemGroup>
+</Project>

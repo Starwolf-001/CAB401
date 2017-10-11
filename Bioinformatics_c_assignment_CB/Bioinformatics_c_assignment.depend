@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1505977420 source:d:\documents\qut\cab401\bioinformatics_c_assignment\improved.cpp
+	<stdio.h>
+	<string.h>
+	<time.h>
+	<math.h>
+	<iostream>
+
