@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClCompile Include="Bioinformatics_c_assignment.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <OpenMPSupport Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</OpenMPSupport>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
