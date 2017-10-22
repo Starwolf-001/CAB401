@@ -1,6 +1,6 @@
 ﻿  Bioinformatics_c_assignment.cpp
-e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(310): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
-  e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(310): note: consider using '%lld' in the format string
-  e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(310): note: consider using '%Id' in the format string
-  e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(310): note: consider using '%I64d' in the format string
+e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(319): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(319): note: consider using '%lld' in the format string
+  e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(319): note: consider using '%Id' in the format string
+  e:\qut\cab401\bioinformatics_c_assignment_high_performance\bioinformatics_c_assignment\bioinformatics_c_assignment.cpp(319): note: consider using '%I64d' in the format string
   Bioinformatics_c_assignment.vcxproj -> E:\QUT\CAB401\Bioinformatics_c_assignment_high_performance\x64\Debug\Bioinformatics_c_assignment.exe
