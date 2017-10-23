@@ -1,11 +1,11 @@
 ﻿  Bioinformatics_c_assignment.cpp
-Bioinformatics_c_assignment.cpp(362): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
-  Bioinformatics_c_assignment.cpp(362): note: consider using '%lld' in the format string
-  Bioinformatics_c_assignment.cpp(362): note: consider using '%Id' in the format string
-  Bioinformatics_c_assignment.cpp(362): note: consider using '%I64d' in the format string
+Bioinformatics_c_assignment.cpp(364): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'time_t'
+  Bioinformatics_c_assignment.cpp(364): note: consider using '%lld' in the format string
+  Bioinformatics_c_assignment.cpp(364): note: consider using '%Id' in the format string
+  Bioinformatics_c_assignment.cpp(364): note: consider using '%I64d' in the format string
   Generating code
-  7 of 24 functions (29.2%) were compiled, the rest were copied from previous compilation.
-    4 functions were new in current compilation
+  6 of 23 functions (26.1%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Bioinformatics_c_assignment.vcxproj -> D:\Documents\QUT\CAB401\Bioinformatics_c_assignment_high_performance\x64\Release\Bioinformatics_c_assignment.exe
