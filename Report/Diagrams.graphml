@@ -1196,10 +1196,10 @@
         <node id="n15::n25">
           <data key="d6">
             <y:ShapeNode>
-              <y:Geometry height="30.0" width="151.72800000000007" x="920.4555132233708" y="1756.2296940104175"/>
+              <y:Geometry height="30.0" width="163.50399999999968" x="914.5675132233708" y="1756.2296940104175"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="147.42578125" x="2.1511093750000327" y="5.6494140625">Calculate one_l_div_total[i]<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="156.759765625" x="3.372117187499839" y="5.6494140625">Calculate second_div_total[i]<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -1891,7 +1891,6 @@
     </node>
     <node id="n17" yfiles.foldertype="group">
       <data key="d4"/>
-      <data key="d5"/>
       <data key="d6">
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
@@ -1920,13 +1919,12 @@
       </data>
       <graph edgedefault="directed" id="n17:">
         <node id="n17::n0">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="87.46061034230343" x="2191.633392459201" y="1056.269694010417"/>
               <y:Fill color="#C0C0C0" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="64.703125" x="11.37874267115194" y="5.6494140625">Bacteria b1<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="64.703125" x="11.378742671151485" y="5.6494140625">Bacteria b1<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -1938,7 +1936,6 @@
           </data>
         </node>
         <node id="n17::n1">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="87.46061034230343" x="2388.3192680243246" y="1056.269694010417"/>
@@ -1956,7 +1953,6 @@
           </data>
         </node>
         <node id="n17::n2">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="118.5039999999999" x="2176.1116976303524" y="1120.4296940104173"/>
@@ -1974,7 +1970,6 @@
           </data>
         </node>
         <node id="n17::n3">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="118.5039999999999" x="2372.7975731954757" y="1120.4296940104173"/>
@@ -2077,7 +2072,6 @@
           </data>
         </node>
         <node id="n17::n9">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2553.15778140215" y="1248.7496940104174"/>
@@ -2180,7 +2174,6 @@
           </data>
         </node>
         <node id="n17::n15">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2553.15778140215" y="1372.9096940104173"/>
@@ -2232,7 +2225,6 @@
           </data>
         </node>
         <node id="n17::n18">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2553.1577814021493" y="1501.1207424997078"/>
@@ -2250,7 +2242,6 @@
           </data>
         </node>
         <node id="n17::n19">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2553.1577814021493" y="1552.8007424997077"/>
@@ -2268,7 +2259,6 @@
           </data>
         </node>
         <node id="n17::n20">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2553.1577814021493" y="1604.4807424997075"/>
@@ -2325,7 +2315,7 @@
               <y:Geometry height="43.97062820236829" width="45.849222337997105" x="2489.1167336346584" y="1432.9096940104173"/>
               <y:Fill color="#00CCFF" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="34.685546875" x="5.581837731498581" y="12.634728163684258">ELSE<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="34.685546875" x="5.581837731498581" y="12.63472816368403">ELSE<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -2388,7 +2378,6 @@
           </data>
         </node>
         <node id="n17::n27">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2273.9304665776076" y="1441.2296940104175"/>
@@ -2474,7 +2463,6 @@
           </data>
         </node>
         <node id="n17::n32">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="72.67112680301398" x="2111.9094600071016" y="1483.149799082148"/>
@@ -2509,13 +2497,12 @@
           </data>
         </node>
         <node id="n17::n34">
-          <data key="d5"/>
           <data key="d6">
             <y:ShapeNode>
               <y:Geometry height="30.0" width="119.68435344671661" x="2088.4028466852506" y="1543.149799082148"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="102.044921875" x="8.81971578585808" y="5.6494140625">Return Correlation<y:LabelModel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="18.701171875" modelName="custom" textColor="#000000" visible="true" width="102.044921875" x="8.819715785858534" y="5.6494140625">Return Correlation<y:LabelModel>
                   <y:SmartNodeLabelModel distance="4.0"/>
                 </y:LabelModel>
                 <y:ModelParameter>
@@ -3730,7 +3717,6 @@
       </data>
     </edge>
     <edge id="n17::e0" source="n17::n0" target="n17::n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3741,7 +3727,6 @@
       </data>
     </edge>
     <edge id="n17::e1" source="n17::n1" target="n17::n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3752,7 +3737,6 @@
       </data>
     </edge>
     <edge id="n17::e2" source="n17::n4" target="n17::n7">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3763,7 +3747,6 @@
       </data>
     </edge>
     <edge id="n17::e3" source="n17::n7" target="n17::n8">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3774,7 +3757,6 @@
       </data>
     </edge>
     <edge id="n17::e4" source="n17::n8" target="n17::n10">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3785,7 +3767,6 @@
       </data>
     </edge>
     <edge id="n17::e5" source="n17::n10" target="n17::n9">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3796,7 +3777,6 @@
       </data>
     </edge>
     <edge id="n17::e6" source="n17::n8" target="n17::n11">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3807,7 +3787,6 @@
       </data>
     </edge>
     <edge id="n17::e7" source="n17::n11" target="n17::n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3818,7 +3797,6 @@
       </data>
     </edge>
     <edge id="n17::e8" source="n17::n12" target="n17::n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3829,7 +3807,6 @@
       </data>
     </edge>
     <edge id="n17::e9" source="n17::n13" target="n17::n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3840,7 +3817,6 @@
       </data>
     </edge>
     <edge id="n17::e10" source="n17::n12" target="n17::n14">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3851,7 +3827,6 @@
       </data>
     </edge>
     <edge id="n17::e11" source="n17::n16" target="n17::n18">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3862,7 +3837,6 @@
       </data>
     </edge>
     <edge id="n17::e12" source="n17::n18" target="n17::n19">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3873,7 +3847,6 @@
       </data>
     </edge>
     <edge id="n17::e13" source="n17::n19" target="n17::n20">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3884,7 +3857,6 @@
       </data>
     </edge>
     <edge id="n17::e14" source="n17::n21" target="n17::n8">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3895,7 +3867,6 @@
       </data>
     </edge>
     <edge id="n17::e15" source="n17::n22" target="n17::n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3906,7 +3877,6 @@
       </data>
     </edge>
     <edge id="n17::e16" source="n17::n14" target="n17::n23">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3917,7 +3887,6 @@
       </data>
     </edge>
     <edge id="n17::e17" source="n17::n23" target="n17::n16">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3928,7 +3897,6 @@
       </data>
     </edge>
     <edge id="n17::e18" source="n17::n23" target="n17::n17">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3939,7 +3907,6 @@
       </data>
     </edge>
     <edge id="n17::e19" source="n17::n6" target="n17::n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3950,7 +3917,6 @@
       </data>
     </edge>
     <edge id="n17::e20" source="n17::n5" target="n17::n24">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3961,7 +3927,6 @@
       </data>
     </edge>
     <edge id="n17::e21" source="n17::n24" target="n17::n25">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3972,7 +3937,6 @@
       </data>
     </edge>
     <edge id="n17::e22" source="n17::n26" target="n17::n24">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3983,7 +3947,6 @@
       </data>
     </edge>
     <edge id="n17::e23" source="n17::n25" target="n17::n27">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -3994,7 +3957,6 @@
       </data>
     </edge>
     <edge id="n17::e24" source="n17::n24" target="n17::n28">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4005,7 +3967,6 @@
       </data>
     </edge>
     <edge id="n17::e25" source="n17::n29" target="n17::n30">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4016,7 +3977,6 @@
       </data>
     </edge>
     <edge id="n17::e26" source="n17::n31" target="n17::n29">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4027,7 +3987,6 @@
       </data>
     </edge>
     <edge id="n17::e27" source="n17::n29" target="n17::n33">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4038,7 +3997,6 @@
       </data>
     </edge>
     <edge id="n17::e28" source="n17::n28" target="n17::n29">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4049,7 +4007,6 @@
       </data>
     </edge>
     <edge id="n17::e29" source="n17::n32" target="n17::n29">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4060,7 +4017,6 @@
       </data>
     </edge>
     <edge id="n17::e30" source="n17::n9" target="n17::n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4071,7 +4027,6 @@
       </data>
     </edge>
     <edge id="n17::e31" source="n17::n15" target="n17::n23">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -4082,7 +4037,6 @@
       </data>
     </edge>
     <edge id="n17::e32" source="n17::n2" target="n17::n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4095,7 +4049,6 @@
       </data>
     </edge>
     <edge id="n17::e33" source="n17::n3" target="n17::n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="8.025666346127082">
@@ -4108,7 +4061,6 @@
       </data>
     </edge>
     <edge id="n17::e34" source="n17::n17" target="n17::n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4123,7 +4075,6 @@
       </data>
     </edge>
     <edge id="n17::e35" source="n17::n9" target="n17::n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4141,7 +4092,6 @@
       </data>
     </edge>
     <edge id="n17::e36" source="n17::n15" target="n17::n4">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4158,7 +4108,6 @@
       </data>
     </edge>
     <edge id="n17::e37" source="n17::n4" target="n17::n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4171,7 +4120,6 @@
       </data>
     </edge>
     <edge id="n17::e38" source="n17::n30" target="n17::n32">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4184,7 +4132,6 @@
       </data>
     </edge>
     <edge id="n17::e39" source="n17::n27" target="n17::n24">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -4197,7 +4144,6 @@
       </data>
     </edge>
     <edge id="n17::e40" source="n17::n33" target="n17::n34">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
